@@ -96,3 +96,16 @@ fn delete_from_nested_object() -> Result<(), Box<dyn Error>> {
     assert_eq!("local { obj = { obj2 = {} } }", body.to_string());
     Ok(())
 }
+
+// #[test]
+// fn delete_from_list() -> Result<(), Box<dyn Error>> {
+//     // filter '.local.l[0]'
+//     let fields = vec![Field::new("local"), Field::indexed("l", 0)];
+
+//     let mut body = utilities::edit_hcl("local { l = [1, 2, 3] }")?;
+
+//     delete(fields, &mut body)?;
+
+//     assert_eq!("local { obj = { l = [2, 3] } }", body.to_string());
+//     Ok(())
+// }
